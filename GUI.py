@@ -90,20 +90,23 @@ def Load_excel_data():
 #function for main.py intergeration
 
 def helloCallBack():
-    messagebox.askquestion("Info panel", "Are you sure?")
-    os.system('main.py')
-    messagebox.showinfo("Info","completed sucessfully")
+    check = messagebox.askquestion("Info panel", "Are you sure?")
+    if check=="no":
+        root.destroy()
+    else:
+        os.system('main.py')
+        messagebox.showinfo("Info","completed sucessfully")
 button11 = tk.Button(root, text ="RUN", command = helloCallBack)
 button11.place(x=25, y=410)
 
 
 
-def helloCallBack():
-    messagebox.askquestion("askquestion", "Are you sure?")
-    print("hello")
-    messagebox.showinfo("Info","processing...")
-button11 = tk.Button(root, text ="RUN", command = helloCallBack)
-button11.place(x=25, y=410)
+# def helloCallBack():
+#     messagebox.askquestion("askquestion", "Are you sure?")
+#     print("hello")
+#     messagebox.showinfo("Info","processing...")
+# button11 = tk.Button(root, text ="RUN", command = helloCallBack)
+# button11.place(x=25, y=410)
 
 
 # Button for closing 
